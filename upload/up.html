@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+    <title>Document</title>
+</head>
+<body>  
+    id：<input type="number" id="f_id">
+    URL：<input type="text" id="f_URL">
+    歌詞：<textarea id="kasi"></textarea>
+    かな：<textarea id="kana"></textarea>
+    <button id="btn">送信</button>
+    <script>
+        let idInput = document.getElementById('f_id');
+        let f_URL = document.getElementById('f_URL');
+        let kasi = document.getElementById('kasi');
+        let kana = document.getElementById('kana');
+
+        let firebaseConfig = {
+            apiKey: "AIzaSyDT9B8tcW9ioUvh4gLmwxtqu7XhyPyv4gg",
+             databaseURL: "https://typingube-default-rtdb.firebaseio.com/",
+        };
+
+        // Firebase初期化
+        const app02 = firebase.initializeApp(firebaseConfig, "app02");
+        const app02DB = app02.database();
+
+        document.getElementById('btn').addEventListener('click', () => {
+            let data01 = {
+                "lrc_data": kasi.value,
+                "lrc_kana_data": kana.value,
+                "YT_URL": f_URL.value,
+                "f_id": idInput.value,
+            };
+
+            // 正しいデータベース参照を設定
+            app02DB.ref(data01.f_id).update(data01);
+            alert("送信");
+        });
+    </script>
+</body>
+</html>

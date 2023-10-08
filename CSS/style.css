@@ -1,0 +1,231 @@
+body{
+    color: white;
+}
+
+#wbr{
+    height: 1vh;
+}
+
+#lyrics_text{
+    font-size: 2.1em;
+}
+
+#kana_lyrics_text,#kana_lyrics_text_typed{
+    font-size: 2.1em;
+}
+
+#roma_typed,#roma_untyped{
+    font-size: 1.7em;
+}
+#roma,#kana,#next_lyrics_text{
+    display: flex;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+#roma,#kana{
+    white-space: pre;
+}
+#content_parent{
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+#content{
+    width: 85vw;
+    min-height: 48vh;
+    height: auto;
+    position: absolute;
+    overflow :hidden;
+}
+
+
+#player{
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+#playerdiv{
+    display: flex;
+    width:90vw;
+    top:49vh;
+    position: relative;
+    left:7vw;
+    height:13.35em;
+}
+
+body { min-height: 100vh; }
+
+body{
+    
+    background: linear-gradient(to right, #755062, #624A64, #4F405D, #4A4062, #403F61, #2C3256, #1E2949, #182746, #152242, #0D0E22);
+    font-family: "Segoe UI","Yu Gothic","YuGothic",sans-serif;
+    text-shadow:1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;
+    font-weight:bold;
+}
+
+
+#progressBar{
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    height: 5px;
+}
+
+#progressBar::-webkit-progress-value {
+    background-color: #0fa8b5; /* プログレスバーの色 */
+}
+
+#TimeprogressBar{
+    position: absolute;
+    top: 46vh;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    height: 5px;
+}
+#TimeprogressBar::-webkit-progress-value {
+    background-color: #ffa749; /* プログレスバーの色 */
+}
+
+#next_lyrics_text{
+    font-size: 1.8em;
+    color: bisque;
+	position: absolute;
+	bottom: 1vh;
+    width: 60vw;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#time{
+    font-size:1.3em;
+    position: absolute;
+    right: 0vw;
+    top: 42vh;
+}
+
+#typing_speed{
+    font-size:1.3em;
+    position: absolute;
+    top: -1.25vh;
+    right: 0vw;
+}
+
+#lrc_select{
+    position: relative;
+    top: 100vh;
+    display: flex;
+    flex-wrap: wrap; /* 折返し指定 */
+    width: 100%;
+}
+
+#lrc_select img{
+    width: calc(25% - 22px); /* margin padding分を引く */
+	margin: 1px;
+	padding: 10px;
+}
+
+body::-webkit-scrollbar{
+    display:none;
+  }
+
+
+#playVolume{
+    position: absolute;
+    top:0vh;
+    left: 8vw;
+}
+
+.input-label{
+    position: relative;
+    top: 100vh;
+    height: 1em;
+}
+
+#status{
+    width: 24vw;
+    height:13.35em;
+    font-size:1.5em;
+    border:solid 2px rgb(113, 113, 113);
+    border-radius : 10px;
+    line-height : 1.4em;
+    overflow: scroll;
+}
+
+
+/* スクロールバーの幅と背景色を設定 */
+#status::-webkit-scrollbar{
+    display:none;
+}
+
+#status > span,#status > div{
+    position: relative;
+    left: 1vw;
+}
+
+#ranking{
+    width: 20vw;
+    height:13.35em;
+    font-size:1.5em;
+    border:solid 2px rgb(113, 113, 113);
+    border-radius : 10px;
+    line-height : 1.4em;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 1000px){
+    #status{
+        width: 50vw;
+    }
+    #ranking{
+        position: absolute;
+        top: 52vh;
+        height: 30vh;
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #status{
+        position: absolute;
+        top: 52vh;
+        height: 30vh;
+        width: 90vw;
+    }
+    #ranking{
+        position: absolute;
+        top: 83vh;
+        height: 30vh;
+        width: 90vw;
+    }
+    #playerdiv{
+        height: 25.35em;
+    }
+}
+
+#ranking > ol{
+    position: relative;
+    left: 1vw;
+}
+
+li::marker {
+    content: ""; /* マーカーの内容を空にする */
+}
+
+/* スクロールバーの幅と背景色を設定 */
+#ranking::-webkit-scrollbar{
+    display:none;
+}
+  
+
+
+#Result_div{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 47%);
+    font-size: 2em;
+    position: absolute;
+}
