@@ -1,4 +1,7 @@
 function keygraph_func(kana){
+    if(!index){
+        keygraph.build('');
+    }
     if(line_type_count){
         kana_type_count += line_type_count;
     }
