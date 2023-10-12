@@ -2,7 +2,7 @@ function generate_selection(){
     
     (function() {
         const request = new XMLHttpRequest();
-        request.open('GET', 'https://script.google.com/macros/s/AKfycbwmJ81ez1wrTdjRoGPc8FbDhh5UTYp8R5N9-zGGhKpW1rEf1dDpZw9NgZwPQ9IUrwGz/exec');
+        request.open('GET', 'https://script.google.com/macros/s/AKfycbzxPcbqvA-Oc1Kbo-ljqBi4Kh114j-FapaINL4xg-CS5_HNFXajne8z_H4_2FpBXb_WCw/exec');
             request.responseType = 'json';
             request.onload = function () {
                 data = this.response;
@@ -26,16 +26,27 @@ function generate_selection(){
     }
     
     function img_clickEvent(e){
+        let lrc_data;
         is_F4 = false;
-        lrc_set(e.target.getAttribute("name"));
+        const req = new XMLHttpRequest();
+        req.open('GET', 'https://script.google.com/macros/s/AKfycbzxPcbqvA-Oc1Kbo-ljqBi4Kh114j-FapaINL4xg-CS5_HNFXajne8z_H4_2FpBXb_WCw/exec?id=' + e.target.getAttribute("name"));
+        req.responseType = 'json';
+        req.onload = function () {
+            lrc_data = this.response;
+            console.log(lrc_data)
+            lrc_set(lrc_data)
+        };
+        req.send();
+
+        //lrc_set(e.target.getAttribute("name"));
         play_id = e.target.getAttribute("name");
     }
 
-    function lrc_set(id){
-        video_set(data[id]["URL"]);
-        lyrics(data[id]["KASHI"]);
-        kana_lyrics(data[id]["YOMI"]);
-        show_ranking(id);
+    function lrc_set(l_data){
+        video_set(l_data[1]);
+        lyrics(l_data[3]);
+        kana_lyrics(l_data[4]);
+        show_ranking(l_data[0]);
         player.seekTo(0);
         scrollTo(0,0);
     }
