@@ -16,8 +16,8 @@ function generate_selection(){
         for(d in data){
             let url = data[d]["URL"];
             let f_id = d
-            let thumbnail = `<img 
-            class="thumbnail"src="http://img.youtube.com/vi/${url}/mqdefault.jpg" name="${f_id}">`
+            let thumbnail = `<div><img 
+            class="thumbnail"src="http://img.youtube.com/vi/${url}/mqdefault.jpg" name="${f_id}">${data[d]["TITLE"]}</div>`
             document.getElementById('lrc_select').insertAdjacentHTML("beforeend",thumbnail);
         }
         document.querySelectorAll("#lrc_select img").forEach((imgElm) => {
@@ -36,9 +36,8 @@ function generate_selection(){
             lrc_set(lrc_data)
         };
         req.send();
-
-        //lrc_set(e.target.getAttribute("name"));
         play_id = e.target.getAttribute("name");
+        scrollTo(0,0);
     }
 
     function lrc_set(l_data){
