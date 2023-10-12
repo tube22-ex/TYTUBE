@@ -33,7 +33,6 @@ function generate_selection(){
         req.responseType = 'json';
         req.onload = function () {
             lrc_data = this.response;
-            console.log(lrc_data)
             lrc_set(lrc_data)
         };
         req.send();
