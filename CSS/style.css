@@ -122,11 +122,13 @@ body{
     width: 100%;
 }
 
-#lrc_select img{
+
+#lrc_select div{
     width: calc(25% - 22px); /* margin padding分を引く */
 	margin: 1px;
 	padding: 10px;
 }
+
 
 body::-webkit-scrollbar{
     display:none;
