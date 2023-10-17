@@ -14,11 +14,12 @@ function generate_selection(){
     function add_lrc_selection(data){
 
         for(d in data){
-            let url = data[d]["URL"];
-            let f_id = d
-            let thumbnail = `<div><img 
-            class="thumbnail"src="http://img.youtube.com/vi/${url}/mqdefault.jpg" name="${f_id}">${data[d]["TITLE"]}</div>`
-            document.getElementById('lrc_select').insertAdjacentHTML("beforeend",thumbnail);
+            const URL = data[d]["URL"];
+            const TITLE = data[d]["TITLE"]
+            const F_ID = d
+            const THUMBNAIL = `<div><img 
+            class="thumbnail"src="http://img.youtube.com/vi/${URL}/mqdefault.jpg" name="${F_ID}">${TITLE}</div>`
+            document.getElementById('lrc_select').insertAdjacentHTML("beforeend",THUMBNAIL);
         }
         document.querySelectorAll("#lrc_select img").forEach((imgElm) => {
             imgElm.addEventListener('click', img_clickEvent);

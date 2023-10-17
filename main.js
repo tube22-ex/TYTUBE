@@ -1,5 +1,6 @@
 sound.init();
 clear_sound.init();
+miss_sound.init();
 
 if(localStorage.getItem('name')){
     document.getElementsByName('ranking_show_name')[0].value = localStorage.getItem('name');

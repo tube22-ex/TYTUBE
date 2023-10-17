@@ -53,12 +53,12 @@ function keygraph_func(kana){
                 sound.play();
                 type_count++
                 disp();
+            }else{
+                if(!keygraph.is_finished()){
+                    miss_sound.play();
+                    miss_count++
+                }
             }
-
-            // if(!keygraph.next(e.key)){
-            //     miss_count ++;
-            // }
-            //ミス数だけおかしいので後回し
 
             if (keygraph.is_finished() && !is_finish) {
                 roma_typed.style.color = clear_color;
