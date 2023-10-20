@@ -1,14 +1,22 @@
 function keygraph_func(kana){
+    console.log(index)
     if(!index){
         keygraph.build('');
+        playData = [];
+        console.log(333333333333333333)
     }
     if(line_type_count){
         kana_type_count += line_type_count;
+    }
+    if(linePlayDataArray){
+        playData.push(linePlayDataArray);
+        console.log(playData);
     }
     line_type_count = 0;
     is_finish = false;
     kana = kana.toLowerCase();
     keygraph.build(kana);
+    linePlayDataArray = [];
 
     disp();
     //行初期化
@@ -41,25 +49,40 @@ function keygraph_func(kana){
                 case "F4":
                     is_F4 = true;
                     reset();
+                    keygraph.build('');
+
                 default:
               }
               //ショートカットキー対応
         }else if(is_play){
+            if(keygraph.key_candidate()){
             if (keygraph.next(e.key)) {
                 roma_typed.style.color = type_color;
                 kana_lyrics_text_typed.style.color = type_color;
                 // 入力がタイピングするキーと一致している場合
                 line_type_count = keygraph.seq_done().length;
+                let charDataArray = [
+                    e.key,
+                    1,
+                    currentTime
+                ];
+                linePlayDataArray.push(charDataArray);
                 sound.play();
                 type_count++
                 disp();
             }else{
                 if(!keygraph.is_finished()){
+                    let charDataArray = [
+                        e.key,
+                        0,
+                        currentTime
+                    ];
+                    linePlayDataArray.push(charDataArray);
                     miss_sound.play();
                     miss_count++
                 }
             }
-
+        }
             if (keygraph.is_finished() && !is_finish) {
                 roma_typed.style.color = clear_color;
                 kana_lyrics_text_typed.style.color = clear_color;

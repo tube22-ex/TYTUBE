@@ -24,6 +24,16 @@ function generate_selection(){
         document.querySelectorAll("#lrc_select img").forEach((imgElm) => {
             imgElm.addEventListener('click', img_clickEvent);
         })
+
+        gsap.set('.thumbnail',{autoAlpha: 1});
+        gsap.from('.thumbnail', .5, {
+            autoAlpha: 0,
+            x: -500,
+            y: -1000,
+            stagger: {
+                each: .1,
+            }
+        });
     }
     
     function img_clickEvent(e){

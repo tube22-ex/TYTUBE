@@ -1,5 +1,4 @@
 function reset(){
-    player.seekTo(0);
     Result_div.style.display = 'none';
     is_build_keyevent = false;
     is_finish = false;
@@ -38,7 +37,10 @@ function reset(){
     display_lyrics = [];//タイムタグだけ除いた歌詞
     kana_display_lyrics = [];
     lyrics_s = [];//加工済み歌詞
+    playData = [];//プレイデータ
+    linePlayDataArray = [];
     };
+    player.seekTo(0);
     clearInterval(time_interval);
     clearInterval(slow_interval);
 }
