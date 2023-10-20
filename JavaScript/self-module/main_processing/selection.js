@@ -14,16 +14,25 @@ function generate_selection(){
     function add_lrc_selection(data){
 
         for(d in data){
+<<<<<<< HEAD
             const URL = data[d]["URL"];
             const TITLE = data[d]["TITLE"]
             const F_ID = d
             const THUMBNAIL = `<div><img 
             class="thumbnail"src="http://img.youtube.com/vi/${URL}/mqdefault.jpg" name="${F_ID}">${TITLE}</div>`
             document.getElementById('lrc_select').insertAdjacentHTML("beforeend",THUMBNAIL);
+=======
+            let url = data[d]["URL"];
+            let f_id = d
+            let thumbnail = `<div><img 
+            class="thumbnail"src="http://img.youtube.com/vi/${url}/mqdefault.jpg" name="${f_id}">${data[d]["TITLE"]}</div>`
+            document.getElementById('lrc_select').insertAdjacentHTML("beforeend",thumbnail);
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
         }
         document.querySelectorAll("#lrc_select img").forEach((imgElm) => {
             imgElm.addEventListener('click', img_clickEvent);
         })
+<<<<<<< HEAD
 
         gsap.set('.thumbnail',{autoAlpha: 1});
         gsap.from('.thumbnail', .5, {
@@ -34,6 +43,8 @@ function generate_selection(){
                 each: .1,
             }
         });
+=======
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
     }
     
     function img_clickEvent(e){

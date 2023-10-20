@@ -1,22 +1,33 @@
 function keygraph_func(kana){
+<<<<<<< HEAD
     console.log(index)
     if(!index){
         keygraph.build('');
         playData = [];
         console.log(333333333333333333)
+=======
+    if(!index){
+        keygraph.build('');
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
     }
     if(line_type_count){
         kana_type_count += line_type_count;
     }
+<<<<<<< HEAD
     if(linePlayDataArray){
         playData.push(linePlayDataArray);
         console.log(playData);
     }
+=======
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
     line_type_count = 0;
     is_finish = false;
     kana = kana.toLowerCase();
     keygraph.build(kana);
+<<<<<<< HEAD
     linePlayDataArray = [];
+=======
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
 
     disp();
     //行初期化
@@ -49,18 +60,25 @@ function keygraph_func(kana){
                 case "F4":
                     is_F4 = true;
                     reset();
+<<<<<<< HEAD
                     keygraph.build('');
 
+=======
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
                 default:
               }
               //ショートカットキー対応
         }else if(is_play){
+<<<<<<< HEAD
             if(keygraph.key_candidate()){
+=======
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
             if (keygraph.next(e.key)) {
                 roma_typed.style.color = type_color;
                 kana_lyrics_text_typed.style.color = type_color;
                 // 入力がタイピングするキーと一致している場合
                 line_type_count = keygraph.seq_done().length;
+<<<<<<< HEAD
                 let charDataArray = [
                     e.key,
                     1,
@@ -83,6 +101,18 @@ function keygraph_func(kana){
                 }
             }
         }
+=======
+                sound.play();
+                type_count++
+                disp();
+            }
+
+            // if(!keygraph.next(e.key)){
+            //     miss_count ++;
+            // }
+            //ミス数だけおかしいので後回し
+
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
             if (keygraph.is_finished() && !is_finish) {
                 roma_typed.style.color = clear_color;
                 kana_lyrics_text_typed.style.color = clear_color;

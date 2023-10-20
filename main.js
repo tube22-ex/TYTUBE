@@ -1,6 +1,9 @@
 sound.init();
 clear_sound.init();
+<<<<<<< HEAD
 miss_sound.init();
+=======
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
 
 if(localStorage.getItem('name')){
     document.getElementsByName('ranking_show_name')[0].value = localStorage.getItem('name');

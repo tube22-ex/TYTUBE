@@ -13,8 +13,11 @@ let time_int = [];//timetag
 let display_lyrics = [];//タイムタグだけ除いた歌詞
 let kana_display_lyrics = [];
 let lyrics_s = [];//加工済み歌詞
+<<<<<<< HEAD
 let playData = [];
 let linePlayDataArray = [];
+=======
+>>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
 //配列系
 
 const max_score = 200000;
