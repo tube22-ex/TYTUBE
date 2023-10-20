@@ -1,8 +1,4 @@
 function reset(){
-<<<<<<< HEAD
-=======
-    player.seekTo(0);
->>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
     Result_div.style.display = 'none';
     is_build_keyevent = false;
     is_finish = false;
@@ -41,14 +37,10 @@ function reset(){
     display_lyrics = [];//タイムタグだけ除いた歌詞
     kana_display_lyrics = [];
     lyrics_s = [];//加工済み歌詞
-<<<<<<< HEAD
     playData = [];//プレイデータ
     linePlayDataArray = [];
     };
     player.seekTo(0);
-=======
-    };
->>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
     clearInterval(time_interval);
     clearInterval(slow_interval);
 }

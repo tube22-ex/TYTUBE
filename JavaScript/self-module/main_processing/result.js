@@ -2,11 +2,7 @@ function Result(){
     is_result = true;
     Result_div.style.display = 'block';
     const now = new Date();
-<<<<<<< HEAD
     const NOW = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${now.getHours()}:${now.getMinutes()}`
-=======
-    let NOW = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${now.getHours()}:${now.getMinutes()}`
->>>>>>> ac95a9a49245d7611a6aedad74f7a063b564cf3c
     app01DB.ref(play_id).once('value').then(snapshot => {
         let name = localStorage.getItem('name')
         if(!name){
