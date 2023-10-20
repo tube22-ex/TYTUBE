@@ -31,7 +31,7 @@ function generate_selection(){
             x: -500,
             y: -1000,
             stagger: {
-                each: .5,
+                each: .1,
             }
         });
     }
