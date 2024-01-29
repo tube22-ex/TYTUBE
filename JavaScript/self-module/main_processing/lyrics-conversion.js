@@ -1,3 +1,8 @@
+function htmlDecode(input) {
+    var doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
+}
+
 function lyrics(lrc){
     kana_time_int = [];//timetag
     kana_display_lyrics = [];//タイムタグだけ除いた歌詞
@@ -36,7 +41,8 @@ function lyrics(lrc){
             match_text = /\[\d{2}:\d{2}:\d{2}\]/g;
         }
         let lyrics_text = i.replace(match_text,"");
-        display_lyrics.push(lyrics_text);
+        const HTMLDecodeText = htmlDecode(lyrics_text);
+        display_lyrics.push(HTMLDecodeText);
         lyrics_text = lyrics_text.replace(/['’‘]/g,"");
         lyrics_text = lyrics_text.replace(/&.*?;/g ,"");
         lyrics_text = lyrics_text.replace(/<rt>.*?<\/rt>/g,"");
